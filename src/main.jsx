@@ -8,8 +8,6 @@ ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <GlobalcontextProvider>
       <App />
-
     </GlobalcontextProvider>
-   
   </React.StrictMode>,
 )

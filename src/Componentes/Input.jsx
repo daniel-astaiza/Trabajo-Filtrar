@@ -1,30 +1,27 @@
-import React, { useContext,  } from 'react';
-import {Globalcontext} from "../context/Globalcontext"
-
-
+import {useContext} from 'react';
+import { Globalcontext } from '../context/Globalcontext';
 
 const Input = ({datos}) => {
-
-    const {filtar , setFiltrar} = useContext(Globalcontext)
-
-    const handleoChange = (e) => {
-         const datosValue = e.target.value;
-         setFiltrar(datosValue);
-         datos(datosValue)
-      };
     
 
 
+    const { filtrar, setFiltrar } = useContext(Globalcontext)
+
+    const handleFiltroChange = (e) => {
+        const datosValue = e.target.value;
+        setFiltrar(datosValue);
+        datos(datosValue)
+      };
 
     return (
-        <div>
-        <input type="text" 
+        <div className='mb-3'>
+        <input 
+        type="text"
         placeholder='FILTRAR'
-        value={filtar}
-        onChange={handleoChange} />
-
+        value={filtrar}
+        onChange={handleFiltroChange}
+      />
         </div>
-
     );
 }
 
